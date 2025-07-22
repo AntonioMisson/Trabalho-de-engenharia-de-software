@@ -1,0 +1,90 @@
+Como aluno gostaria de reservar um dos horário disponíveis com o monitor para tirar minhas duvidas sobre a matéria
+O aluno não pode criar horários para consulta da monitoria
+O aluno deve poder ver os horários disponível para a monitoria
+O aluno só pode reservar um horário de uma matéria em que ele esteja matriculado
+
+Como monitor gostaria de criar um horário fora do horário de aulas para tirar duvidas dos alunos
+Um monitor só pode criar um horário fora do horário de aula
+A monitoria de atender no mínimo um aluno
+Para participar da monitoria o aluno deve fazer o agendamento antes
+
+Como aluno gostaria de enviar a minha resolução da atividade do professor para que o monitor pudesse me ajudar
+O aluno só pode mandar uma atividade por vez
+O monitor poderá responder o aluno o horário que puder
+O aluno só poderá enviar atividades enviadas pelo professor da matéria
+
+Como aluno gostaria de que a plataforma tivesse uma interação entre alunos e monitores em forma de mensagens
+A plataforma permitira mensagens entre alunos e monitores por forma de um fórum
+
+Como aluno, eu gostaria de uma aba no Sistema só para Atividades, para receber o diagnóstico do professor e resolução das questões erradas
+Gostaria de uma interface para que eu consiga enviar as atividades, com a lista de atividades, filtro, detalhes, prazo
+Gostaria de ter o feedback que foram enviadas e gostaria de poder comentar em cima, podendo também ver meus comentários e os do professor
+Gostaria de ter uma interface organizada com cada matéria, assunto da matéria, semestre, professor
+
+Como aluno eu gostaria de ter um perfil individual
+Eu gostaria de ter um perfil que eu possa logar com minha matrícula
+Eu gostaria que nesse perfil contasse com todas minhas atividades e um gráfico estatístico
+Eu gostaria que nesse perfil houvesse como ditar os horários que eu estou disponível e as matérias que mais tenho dificuldade
+
+Como monitor eu gostaria de ter um ambiente que eu possa fazer o agendamento
+Gostaria que o aluno consiga ver e confirmar o agendamento
+Gostaria de poder ver os dias da semana e os horários para que possa fazer o agendamento
+Gostaria de saber o status do agendamento, se já passou gostaria que fosse dado como concluído, caso contrário, gostaria de um status pendente e também uma notificação no dia para lembrar
+
+Como usuário eu gostaria de poder ter uma aba de suporte para reportar falhas ou sugerir melhorias
+Gostaria de ter uma aba para fazer um ticket personalizado anônimo para criticas e melhorias, além de reportar falhas e bugs
+Gostaria de um feedback que o ticket foi lido e está sendo analisado
+Gostaria que caso seja um ticket de falha, seja resolvido rapidamente por uma equipe de suporte
+
+Como aluno, gostaria de poder dar um feedback a um monitor.
+O monitor não deve conseguir ver a identidade do aluno
+Ao término de uma monitoria, o aluno deve conseguir avaliar o monitor
+
+Como aluno, gostaria de poder acessar ao FAQs.
+No menu, o aluno deve conseguir clicar em FAQ e em seguida ser direcionado para perguntas categorizadas.
+Monitores devem ser capazes de adicionar e editar novas perguntas frequentes com respostas.
+
+Como monitor, gostaria de poder classificar o nível de conhecimento de um aluno.
+Após o atendimento, o monitor deve ser capaz de categorizar o nível de conhecimento do aluno "Iniciante", "Intermediário", "Avançado".
+O sistema deve salvar a avaliação associada ao aluno.
+Monitores devem ser capazes de alterar essa categorização.
+
+Como aluno eu gostaria de ver todos os monitores em atividade no semestre letivo para poder escolher um dentre eles.
+No momento que o aluno fizer login no sistema, já deve aparecer uma lista de monitores na página inicial;
+Essa lista deve conter o nome do(a) monitor(a) e sua respectiva matéria.
+
+Como aluno eu gostaria de ver as informações dos monitores para poder ver com quem irei ser monitorado e os horários disponíveis.
+Quando o usuário clicar no campo de qualquer monitor, uma nova janela deve aparecer contendo as informações do(a) monitor(a) presentes no cartão abaixo;
+Nessa janela deve haver um botão para agendar horário com o respectivo monitor;
+O usuário deve ser livre para ler as informações e escolher ou não agendar um horário.
+
+Como monitor eu quero ter uma interface fácil e eficiente para poder me cadastrar no sistema
+Quando um usuário escolher se cadastrar como monitor, uma janela de cadastro deve abrir contendo os campos correspondentes com suas informações;
+Deve haver campos obrigatórios e opcionais;
+Enquanto o usuário não preencher corretamente todos os campos obrigatórios, o sistema não deve permitir que ele se cadastre.
+
+Como aluno eu quero poder encontrar a matéria ou monitor(a) a partir de uma busca para não ter que procurar um por um.
+Na página inicial deve haver um campo para realizar buscas pelo nome da matéria ou monitor(a);
+Caso a matéria ou monitor(a) não esteja cadastrado, uma mensagem de aviso deve ser mostrada ao usuário;
+Caso a monitoria de determinada matéria não esteja disponível, uma mensagem de aviso deve ser mostrada ao usuário;
+O campo de busca não deve permitir realizar uma busca caso o usuário não tenha digitado algo.
+
+Como aluno eu gostaria de ter um calendário com as datas das próximas monitorias.
+Atualização automática
+Visualização clara
+Permissão para aluno fazer marcações
+
+Como monitor eu gostaria de ter as atividades dos alunos em ordem alfabética.
+Ordem alfabética
+Barra de pesquisa
+Atualização dinâmica
+
+Como monitor eu gostaria de conseguir anexar arquivos como atividades, slides, resolução, etc.
+Anexar arquivo
+Download disponível para os alunos
+Limite de tamanho de arquivo
+
+Como aluno eu gostaria de poder responder o anexo dos arquivos para relatar erros ou tirar dúvidas
+Campo de resposta
+Visualização para o monitor
+Histórico de comentários
