@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, make_respo
 import os
 import json
 
+app = Flask(__name__, static_url_path='/static', static_folder='static')
+
 app = Flask(__name__)
 USUARIOS_PATH = "usuarios.json"
 

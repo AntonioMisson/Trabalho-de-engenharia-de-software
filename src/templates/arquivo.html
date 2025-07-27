@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar Atividade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- TOPO VERDE COM LOGO -->
+  <header style="background-color: #2db261; padding: 20px; display: flex; justify-content: flex-end;">
+    <img src="/src/static/logo.png" alt="Logo" style="height: 50px;">
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="main-panel" style="display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; align-items: flex-start; padding: 40px;">
+
+    <!-- FORMULÁRIO -->
+    <form style="flex: 1; min-width: 300px;">
+      <label for="monitor">Monitor:</label>
+      <input type="text" id="monitor" placeholder="Escolha o monitor...">
+
+      <label for="descricao">Descrição:</label>
+      <input type="text" id="descricao" placeholder="Descrição do envio...">
+
+      <!-- UPLOAD DE ARQUIVO -->
+    <div style="background-color: #e0e0e0; padding: 24px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); min-width: 220px; text-align: center;">
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">Anexar Arquivo</p>
+      <label for="arquivo" style="display: inline-block; background-color: #f4f4f4; padding: 16px 24px; border-radius: 10px; cursor: pointer; border: 1px solid #333;">
+        <i class="fas fa-paper-plane fa-2x"></i>
+      </label>
+      <input type="file" id="arquivo" style="display: none;">
+    </div>
+
+    <!-- BOTÕES -->
+    <div style="width: 100%; display: flex; justify-content: space-between; margin-top: 40px;">
+      <button style="background-color: gray; color: white; padding: 10px 20px; border-radius: 8px;">Voltar</button>
+      <button style="background-color: gray; color: white; padding: 10px 20px; border-radius: 8px;">Enviar</button>
+    </div>
+    </form>
+
+  </div>
+
+  <!-- RODAPÉ VERDE -->
+  <footer style="background-color: #2db261; height: 40px;"></footer>
+
+</body>
+</html>
