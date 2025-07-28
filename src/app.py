@@ -76,3 +76,23 @@ def cadastro():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+@app.route("/perfil")
+def perfil():
+    return render_template("perfil.html")
+
+@app.route("/arquivo", methods=["GET", "POST"])
+def enviar_atividade():
+    if request.method == "POST":
+        # Aqui você pode salvar arquivos e dados, exemplo:
+        monitor = request.form.get("monitor")
+        descricao = request.form.get("descricao")
+        arquivo = request.files.get("arquivo")
+
+        if arquivo:
+            caminho = os.path.join("uploads", arquivo.filename)
+            arquivo.save(caminho)
+
+        return redirect(url_for("home"))
+
+    return render_template("arquivo.html")
