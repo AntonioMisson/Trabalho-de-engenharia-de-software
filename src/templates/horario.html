@@ -3,9 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Agendamento</title>
-  <link rel="stylesheet"
-      href="../static/style.css">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .schedule-button.available {
+      background-color: #f0f0f0;
+      color: black;
+    }
+    .schedule-button.selected-by-user {
+      background-color: green;
+      color: white;
+    }
+    .schedule-button.booked {
+      background-color: red;
+      color: white;
+    }
+    form {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <div class="schedule-container">
@@ -26,24 +41,25 @@
           {% for dia in dias %}
             {% set chave = dia ~ '-' ~ hora|replace(':', '') %}
             <td>
-              {% if agendados.get(chave) %}
-                {% if agendados.get(chave) == usuario %}
-                  <!-- Agendado pelo usuário -->
-                  <button class="schedule-button selected-by-user">
-                    {{ hora }}
-                  </button>
+              <form method="POST" action="{{ url_for('horario') }}">
+                <input type="hidden" name="dia" value="{{ dia }}">
+                <input type="hidden" name="hora" value="{{ hora }}">
+                {% if agendados.get(chave) %}
+                  {% if agendados.get(chave) == usuario %}
+                    <button class="schedule-button selected-by-user" disabled>
+                      {{ hora }}
+                    </button>
+                  {% else %}
+                    <button class="schedule-button booked" disabled>
+                      {{ hora }}
+                    </button>
+                  {% endif %}
                 {% else %}
-                  <!-- Agendado por outro -->
-                  <button class="schedule-button booked" disabled>
+                  <button type="submit" class="schedule-button available">
                     {{ hora }}
                   </button>
                 {% endif %}
-              {% else %}
-                <!-- Disponível -->
-                <button class="schedule-button available">
-                  {{ hora }}
-                </button>
-              {% endif %}
+              </form>
             </td>
           {% endfor %}
         </tr>

@@ -4,24 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bem-vindo</title>
-  <link rel="stylesheet"
-      href="../static/style.css">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="container">
     <header>
-   <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
     </header>
 
     <main class="main-content">
       <div class="text-box">
         <h1>Bem-vindo ao Sistema</h1>
         <p>Gerencie com facilidade, agilidade e segurança.</p>
-        <a href="/src/templates/login.html" class="btn">Entrar</a>
-      </div>
-      <div class="illustration">
-        <img src="{{ url_for('static', filename='welcome_art.png') }}" alt="Ilustração de boas-vindas">
+        <a href="{{ url_for('login') }}" class="btn">Entrar</a>
       </div>
     </main>
   </div>

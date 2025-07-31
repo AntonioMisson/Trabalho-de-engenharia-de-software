@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Editar Perfil</title>
- <link rel="stylesheet"
-      href="../static/style.css">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -14,34 +12,63 @@
     <!-- Sidebar do perfil -->
     <aside class="sidebar" style="position: relative; height: auto; width: 220px;">
       <div style="text-align: center; padding: 20px;">
-        <p style="margin-bottom: 20px;">Nome do usuário</p>
-        <img src="https://via.placeholder.com/100" alt="Foto de perfil" style="border-radius: 50%; margin-bottom: 20px;">
-        <button style="background-color: gray; padding: 10px 14px; border-radius: 8px;">Mudar foto</button>
+        <p style="margin-bottom: 20px;">{{ usuario }}</p>
+
+        <!-- Foto de perfil (real, se existir) -->
+        <img
+          id="preview"
+          src="{{ url_for('static', filename='fotos/' + dados.get('foto', 'placeholder.png')) }}"
+          alt="Foto de perfil"
+          style="border-radius: 50%; margin-bottom: 20px; width: 100px; height: 100px;"
+        >
+
+        <!-- Input escondido para upload -->
+        <input type="file" id="fotoInput" name="foto" accept=".png" style="display: none;" onchange="previewFoto(event)">
+
+        <!-- Botão para selecionar a imagem -->
+        <button type="button" onclick="document.getElementById('fotoInput').click()" style="background-color: gray; padding: 10px 14px; border-radius: 8px;">
+          Mudar foto (.png)
+        </button>
       </div>
+
+      <script>
+      function previewFoto(event) {
+        const file = event.target.files[0];
+        if (file && file.type === "image/png") {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            document.getElementById("preview").src = e.target.result;
+          }
+          reader.readAsDataURL(file);
+        } else {
+          alert("Por favor, selecione apenas arquivos .png");
+          event.target.value = ""; // limpa o campo
+        }
+      }
+      </script>
     </aside>
 
     <!-- Formulário de edição -->
     <main style="flex: 1;">
-      <form style="background-color: #e0e0e0; color: black; box-shadow: 2px 2px 6px rgba(0,0,0,0.2);">
+      <form method="POST" action="{{ url_for('perfil') }}" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" placeholder="Digite seu nome...">
+        <input type="text" id="nome" name="nome" value="{{ dados.get('nome', '') }}" required>
 
         <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" placeholder="Digite seu Telefone...">
+        <input type="text" id="telefone" name="telefone" value="{{ dados.get('telefone', '') }}" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Digite seu Email...">
+        <input type="email" id="email" name="email" value="{{ dados.get('email', '') }}" required>
 
         <label for="curso">Curso:</label>
-        <input type="text" id="curso" placeholder="Digite seu Curso...">
+        <input type="text" id="curso" name="curso" value="{{ dados.get('curso', '') }}" required>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 20px; background-color: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-          <button style="background-color: gray; padding: 10px 20px; border-radius: 8px;">Voltar</button>
-          <button style="background-color: gray; padding: 10px 20px; border-radius: 8px;">Salvar</button>
+        <div style="margin-top: 20px;">
+          <a href="{{ url_for('main') }}" class="btn">Voltar</a>
+          <button type="submit" class="btn">Salvar</button>
         </div>
       </form>
     </main>
-
   </div>
 
 </body>

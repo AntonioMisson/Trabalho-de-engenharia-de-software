@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Cadastro</title>
-  <link rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h2>Cadastro</h2>
-  <form method="POST">
-    <label>Email:</label>
-    <input type="email" name="email" required><br>
-    <label>Senha:</label>
-    <input type="password" name="senha" required><br>
-    <label>Nome de Usuário:</label>
-    <input type="text" name="nome" required><br>
-    <label>Tipo de Conta:</label>
-    <select name="tipo_conta" required>
-      <option value="aluno">Aluno</option>
-      <option value="monitor">Monitor</option>
-    </select><br>
-    <button type="submit">Cadastrar</button>
-  </form>
-  <p>Já tem conta? <a href="/src/templates/login.html">Entrar</a></p>
+  
+    <form method="POST">
+      <h2>Cadastro</h2>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="senha">Senha:</label>
+      <input type="password" name="senha" id="senha" required />
+
+      <label for="usuario">Nome de usuário:</label>
+      <input type="text" name="usuario" id="usuario" required />
+
+      <label for="tipo">Tipo:</label>
+      <select name="tipo" id="tipo" required>
+        <option value="">Selecione</option>
+        <option value="aluno">Aluno</option>
+        <option value="monitor">Monitor</option>
+      </select>
+
+      <button type="submit" class="btn">Cadastrar</button>
+
+      <p style="text-align: center; margin-top: 20px;">
+        Já tem conta?
+        <a href="{{ url_for('login') }}">Entrar</a>
+      </p>
+    </form>
+  
 </body>
 </html>

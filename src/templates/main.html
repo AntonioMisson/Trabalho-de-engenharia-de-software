@@ -4,26 +4,24 @@
   <meta charset="UTF-8" />
   <title>Menu Principal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet"
-      href="../static/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- SIDEBAR LATERAL -->
   <nav class="sidebar">
-    <div class="menu-item"><i class="fas fa-users"></i> Ver Monitores</div>
-    <div class="menu-item"><i class="fas fa-calendar"></i> Agendar Horário</div>
-    <div class="menu-item"><i class="fas fa-comment-dots"></i> Dar Feedback</div>
-    <div class="menu-item"><i class="fas fa-paper-plane"></i> Enviar Atividades</div>
+    <a href="{{ url_for('monitores') }}" class="menu-item"><i class="fas fa-users"></i>Ver Monitores</a>
+    <a href="{{ url_for('horario') }}" class="menu-item"><i class="fas fa-calendar"></i>Agendar Horário</a>
+    <a href="{{ url_for('feedback') }}" class="menu-item"><i class="fas fa-comment-dots"></i>Dar Feedback</a>
+    <a href="{{ url_for('arquivo') }}" class="menu-item"><i class="fas fa-paper-plane"></i>Enviar Atividades</a>
     <div class="menu-item"><i class="fas fa-circle-info"></i> Saiba Mais</div>
-    <a href="/src/templates/perfil.html" class="menu-item">
-  <i class="fas fa-user"></i> Meu Perfil
-</a>
+    <a href="{{ url_for('avaliação_aluno') }}" class="menu-item"><i class ="fas fa-calendar-alt"></i>Avaliação dos Alunos</a>
+    <a href="{{ url_for('perfil') }}" class="menu-item"> <i class="fas fa-user"></i> Meu Perfil</a>
     <div class="menu-item"><i class="fas fa-envelope"></i> Mensagens</div>
-    <div class="menu-item"><i class="fas fa-circle-question"></i> Ajuda/FAQs</div>
+    <a href="{{ url_for('FAQs') }}" class="menu-item"><i class="fas fa-circle-question"></i> Ajuda/FAQs</a>
     <div class="menu-item"><i class="fas fa-gear"></i> Configurações</div>
-    <div class="menu-item"><i class="fas fa-sign-out-alt"></i> Sair</div>
+    <a href="{{ url_for('home') }}" class="menu-item"><i class="fas fa-sign-out-alt"></i>Sair</a>
   </nav>
 
   <!-- CONTEÚDO PRINCIPAL -->
@@ -34,16 +32,16 @@
     </div>
 
     <div class="main-buttons">
-      <a href="/src/templates/arquivo.html" class="button-tile">
+      <a href="{{ url_for('arquivo') }}" class="button-tile">
         <i class="fas fa-paper-plane"></i><br>Enviar Atividades
       </a>
-      <a href="/src/templates/horario.html" class="button-tile">
+      <a href="{{ url_for('horario') }}" class="button-tile">
         <i class="fas fa-calendar-alt"></i><br>Agendar um Horário
       </a>
-      <a href="/src/templates/monitores.html" class="button-tile">
+      <a href="{{ url_for('monitores') }}" class="button-tile">
         <i class="fas fa-users"></i><br>Ver Monitores
       </a>
-      <a href="/src/templates/feedback.html" class="button-tile">
+      <a href="{{ url_for('feedback') }}" class="button-tile">
         <i class="fas fa-comment-dots"></i><br>Enviar um Feedback
       </a>
     </div>

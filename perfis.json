@@ -1,0 +1,26 @@
+{
+  "antonio@gmail.com": {
+    "nome": "antoniil",
+    "telefone": "88888",
+    "curso": "Bcc",
+    "email": "aluno@aluno"
+  },
+  "maria@exemplo.com": {
+    "nome": "Maria Souza",
+    "curso": "Bcc",
+    "disciplina": "POO",
+    "disponibilidade": "Terças e Quintas, 10h-12h"
+  },
+  "joao@exemplo.com": {
+    "nome": "João Silva",
+    "curso": "Ciência da Computação",
+    "disciplina": "Cálculo I",
+    "disponibilidade": "Segundas e Quartas, 14h-16h"
+  },
+  "eu": {
+    "nome": "eu",
+    "telefone": "1234",
+    "curso": "Física",
+    "email": "eu@gmail.com"
+  }
+}

@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQs</title>
-    <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8">
+  <title>FAQs</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background-color: #015c38;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #0b3e2c;
+      border-radius: 16px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .faq-items details {
+      background-color: #134e3a;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-items summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .faq-content {
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .back-button {
+      background: linear-gradient(to right, #7f5af0, #6246ea);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .back-button:hover {
+      background: #6246ea;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -21,33 +75,33 @@
       <details>
         <summary>Quais são os requisitos para ser monitor?</summary>
         <div class="faq-content">
-          <p>Os requisitos podem variar, mas geralmente incluem: ter sido aprovado na disciplina com nota mínima (ex: 70 ou mais), ter bom desempenho acadêmico geral, disponibilidade de horário e interesse em auxiliar outros estudantes. Alguns cursos podem exigir que o aluno esteja em determinado período ou tenha cursado disciplinas específicas.</p>
+          <p>Os requisitos podem variar, mas geralmente incluem: ter sido aprovado na disciplina com nota mínima (ex: 70 ou mais), ter bom desempenho acadêmico geral, disponibilidade de horário e interesse em auxiliar outros estudantes.</p>
         </div>
       </details>
 
       <details>
         <summary>Como posso agendar um atendimento com um monitor?</summary>
         <div class="faq-content">
-          <p>O agendamento de atendimento com monitores pode ser feito de diversas formas, dependendo da organização de cada curso. Pode ser através de uma plataforma online específica, por e-mail direto com o monitor, ou em horários fixos de atendimento divulgados previamente. Verifique as informações no site da disciplina ou com seu professor.</p>
+          <p>O agendamento pode ser feito por uma plataforma, e-mail direto com o monitor ou em horários fixos de atendimento divulgados. Verifique no site da disciplina ou com seu professor.</p>
         </div>
       </details>
 
       <details>
         <summary>Qual a carga horária de um monitor?</summary>
         <div class="faq-content">
-          <p>A carga horária de um monitor é definida pela instituição e pelo departamento. Geralmente, varia entre 8 a 12 horas semanais, incluindo horas de atendimento aos alunos, preparação de materiais e reuniões com o professor orientador. Essa informação é detalhada no edital de seleção.</p>
+          <p>A carga horária varia entre 8 a 12 horas semanais, incluindo atendimentos, preparação de materiais e reuniões com o professor orientador.</p>
         </div>
       </details>
 
       <details>
         <summary>A monitoria oferece bolsa?</summary>
         <div class="faq-content">
-          <p>Sim, muitas monitorias oferecem bolsa, que pode ser um auxílio financeiro ou créditos acadêmicos. A disponibilidade de bolsas e seus valores dependem do orçamento da instituição e da política de cada programa de monitoria. Essa informação é sempre especificada no edital de seleção.</p>
+          <p>Sim, muitas monitorias oferecem bolsa ou créditos. Isso depende do orçamento da instituição e do edital do programa de monitoria.</p>
         </div>
       </details>
     </div>
 
-    <button type="button" class="back-button">Voltar</button>
+    <a href="{{ url_for('main') }}" class="btn btn-back">Voltar</a>
   </div>
 </body>
 </html>

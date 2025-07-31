@@ -9,11 +9,11 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <link rel="stylesheet"
-      href="../static/style.css">
+      href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Login</h1>
   <form method="POST">
+    <h1>Login</h1>
     <label>Email ou nome de usuário:</label><br>
     <input type="text" name="email_ou_usuario" required /><br /><br />
 
@@ -22,11 +22,12 @@
 
     <label><input type="checkbox" name="lembrar" /> Lembrar-me</label><br /><br />
 
-    <button type="submit">Entrar</button>
-  </form>
-
-  {% if mensagem %}
+    <button type="submit" class="btn">Entrar</button>
+    {% if mensagem %}
     <p style="color:red;">{{ mensagem|safe }}</p>
   {% endif %}
+  </form>
+
+  
 </body>
 </html>
