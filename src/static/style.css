@@ -1,3 +1,4 @@
+
 /* RESET GERAL E BASE */
 * {
   margin: 0;
@@ -283,4 +284,140 @@ p a:hover {
   .main-buttons {
     grid-template-columns: 1fr;
   }
+}
+
+
+
+/* === AGENDA / HORÁRIOS === */
+
+.schedule-container {
+  background-color: #0f3d2e;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.schedule-title {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+  font-size: 1rem;
+  table-layout: fixed;
+}
+
+.schedule-table th {
+  background-color: #068d4e;
+  color: white;
+  padding: 12px;
+  border: 1px solid #044e33;
+}
+
+.schedule-table td {
+  border: 1px solid #044e33;
+  height: 60px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hour-cell-0700,
+.hour-cell-0800,
+.hour-cell-0900,
+.hour-cell-1000,
+.hour-cell-1100,
+.hour-cell-1300,
+.hour-cell-1400,
+.hour-cell-1500,
+.hour-cell-1600,
+.hour-cell-1700 {
+  background-color: #044e33;
+  font-weight: bold;
+  color: #c8f7e2;
+  font-size: 0.95rem;
+}
+
+.schedule-button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #ffffff;
+  color: #000;
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.schedule-button:hover {
+  background-color: #5f67ff;
+  color: white;
+}
+
+.schedule-button.booked {
+  background-color: #e74c3c;
+  color: white;
+  cursor: not-allowed;
+}
+
+.schedule-button.available,
+.schedule-button.selected-by-user {
+  background-color: #068d4e;
+  color: white;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .schedule-table th,
+  .schedule-table td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .schedule-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+/* estilo base de todos os botões */
+.schedule-button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 1. Disponível: branco */
+.schedule-button.available {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.schedule-button.available:hover {
+  background-color: #f0f0f0;
+}
+
+/* 2. Agendado pelo usuário: verde */
+.schedule-button.selected-by-user {
+  background-color: #068d4e;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+/* 3. Agendado por outros: vermelho */
+.schedule-button.booked {
+  background-color: #e74c3c;
+  color: #ffffff;
+  cursor: not-allowed;
 }

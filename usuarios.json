@@ -22,5 +22,11 @@
     "senha": "123456",
     "usuario": "testuser",
     "tipo": "aluno"
+  },
+  {
+    "email": "antonio@gmail.com",
+    "senha": "123",
+    "usuario": null,
+    "tipo": null
   }
 ]

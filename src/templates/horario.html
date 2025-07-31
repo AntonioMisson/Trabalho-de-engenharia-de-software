@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento</title>
+  <link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="schedule-container">
+    <h2 class="schedule-title">Agendamento de horários</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Horários</th>
+          {% for dia in dias %}
+            <th>{{ dia }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for hora in horarios %}
+        <tr>
+          <td class="hour-cell">{{ hora }}</td>
+          {% for dia in dias %}
+            {% set chave = dia ~ '-' ~ hora|replace(':', '') %}
+            <td>
+              {% if agendados.get(chave) %}
+                {% if agendados.get(chave) == usuario %}
+                  <!-- Agendado pelo usuário -->
+                  <button class="schedule-button selected-by-user">
+                    {{ hora }}
+                  </button>
+                {% else %}
+                  <!-- Agendado por outro -->
+                  <button class="schedule-button booked" disabled>
+                    {{ hora }}
+                  </button>
+                {% endif %}
+              {% else %}
+                <!-- Disponível -->
+                <button class="schedule-button available">
+                  {{ hora }}
+                </button>
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
