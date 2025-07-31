@@ -1,0 +1,436 @@
+/* RESET GERAL E BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #068d4e, #044e33);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #0f3d2e;
+  border-radius: 16px;
+  padding: 60px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+header .logo {
+  height: 60px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.text-box {
+  max-width: 600px;
+}
+
+.text-box h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.text-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: #c7e6d2;
+}
+
+/* BOTÕES GERAIS */
+.btn,
+button,
+.button-tile {
+  background: linear-gradient(135deg, #5f67ff, #9b40f8);
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover,
+button:hover,
+.button-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active,
+button:active,
+.button-tile:active {
+  transform: scale(0.98);
+}
+
+/* FORMULÁRIO */
+form {
+  background-color: #0f3d2e;
+  padding: 48px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 420px;
+}
+
+form h1,
+form h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  color: #c8f7e2;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(6, 141, 78, 0.5);
+}
+
+/* SELECT CUSTOM */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23068d4e' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 6.646a.5.5 0 0 1 .708 0L8 9.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 42px;
+}
+
+/* ILUSTRAÇÃO */
+.illustration img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #0f3d2e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 12px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar .menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .menu-item i {
+  font-size: 18px;
+}
+
+/* PAINEL PRINCIPAL */
+.main-panel {
+  margin-left: 240px;
+  padding: 40px;
+}
+
+/* CARTÃO DE BOAS-VINDAS */
+.welcome-card {
+  background-color: #0f3d2e;
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.welcome-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.welcome-card p {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* BOTÕES EM GRADE */
+.main-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* LINKS E MENSAGENS */
+p {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.95rem;
+  color: #ffaaaa;
+}
+
+p a {
+  color: #c8f7e2;
+  text-decoration: underline;
+}
+
+p a:hover {
+  color: #ffffff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-box h1 {
+    font-size: 2.2rem;
+  }
+
+  .text-box p {
+    font-size: 1rem;
+  }
+
+  .illustration img {
+    max-width: 300px;
+    margin-top: 30px;
+  }
+
+  form {
+    padding: 30px 20px;
+  }
+
+  form h1, form h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 32px 24px;
+  }
+
+  .main-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background similar to the image */
+    color: #f0f0f0; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top, adjust as needed */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Schedule Container */
+.schedule-container {
+    background-color: #2c2c2c; /* Slightly lighter dark background for the container */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 900px; /* Adjust max-width as per your design needs */
+    width: 100%;
+}
+
+/* Schedule Title */
+.schedule-title {
+    color: #f0f0f0;
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px; /* Align with table header padding */
+}
+
+/* Schedule Table */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures columns have equal width */
+}
+
+/* Table Headers */
+.schedule-table th {
+    background-color: #3a3a3a; /* Darker header background */
+    color: #f0f0f0;
+    padding: 15px 10px;
+    text-align: center;
+    border: 1px solid #4a4a4a; /* Border for headers */
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* Specific Header Styling */
+.table-header-hour {
+    width: 15%; /* Adjust width for the hour column */
+    background-color: #2ecc71; /* Green for the "Horários" column header */
+}
+
+.table-header-day {
+    width: 17%; /* Distribute remaining width among 5 days */
+}
+
+/* Table Cells (td) */
+.schedule-table td {
+    padding: 0; /* Remove padding from cell to let button fill it */
+    border: 1px solid #4a4a4a; /* Border for cells */
+    height: 60px; /* Fixed height for each row/cell */
+    vertical-align: middle; /* Center content vertically */
+    text-align: center; /* Center content horizontally */
+}
+
+/* Hour Cells */
+.hour-cell-0700, .hour-cell-0800, .hour-cell-0900, .hour-cell-1000,
+.hour-cell-1100, .hour-cell-1300, .hour-cell-1400, .hour-cell-1500,
+.hour-cell-1600, .hour-cell-1700 {
+    background-color: #2ecc71; /* Green background for hour cells */
+    color: #1a1a1a; /* Dark text for contrast */
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    padding: 0 10px; /* Add internal padding */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+
+/* Schedule Buttons */
+.schedule-button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff; /* Default white for empty slots */
+    transition: background-color 0.2s ease; /* Smooth transition for color change */
+    display: block; /* Ensures the button fills the cell */
+    padding: 0; /* Remove internal padding from button */
+}
+
+/* State for Booked (Red) - Ocupado por outro usuário (vindo do backend) */
+.schedule-button.booked {
+    background-color: #e74c3c; /* Red for booked slots */
+    cursor: not-allowed; /* Indicate it's not clickable */
+}
+
+/* State for Available (Green from image, meaning already marked by 'owner') - Verde inicial da imagem */
+.schedule-button.available {
+    background-color: #2ecc71; /* Green from the image */
+    cursor: not-allowed; /* Also not clickable for new bookings */
+}
+
+
+/* State when the user selects an empty slot (becomes green) - Agendado por você */
+.schedule-button.selected-by-user {
+    background-color: #2ecc71; /* Green when user selects */
+    cursor: not-allowed; /* Once selected, it's considered taken for the current user */
+}
+
+
+/* Day-specific cell styling (if needed for further customization, currently just for exclusivity) */
+/* (Estes seletores permanecem para garantir a "exclusividade" conforme solicitado,
+   mesmo que não apliquem estilos adicionais neste momento) */
+.day-cell-segunda-0700, .day-cell-terca-0700, .day-cell-quarta-0700,
+.day-cell-quinta-0700, .day-cell-sexta-0700,
+.day-cell-segunda-0800, .day-cell-terca-0800, .day-cell-quarta-0800,
+.day-cell-quinta-0800, .day-cell-sexta-0800,
+.day-cell-segunda-0900, .day-cell-terca-0900, .day-cell-quarta-0900,
+.day-cell-quinta-0900, .day-cell-sexta-0900,
+.day-cell-segunda-1000, .day-cell-terca-1000, .day-cell-quarta-1000,
+.day-cell-quinta-1000, .day-cell-sexta-1000,
+.day-cell-segunda-1100, .day-cell-terca-1100, .day-cell-quarta-1100,
+.day-cell-quinta-1100, .day-cell-sexta-1100,
+.day-cell-segunda-1300, .day-cell-terca-1300, .day-cell-quarta-1300,
+.day-cell-quinta-1300, .day-cell-sexta-1300,
+.day-cell-segunda-1400, .day-cell-terca-1400, .day-cell-quarta-1400,
+.day-cell-quinta-1400, .day-cell-sexta-1400,
+.day-cell-segunda-1500, .day-cell-terca-1500, .day-cell-quarta-1500,
+.day-cell-quinta-1500, .day-cell-sexta-1500,
+.day-cell-segunda-1600, .day-cell-terca-1600, .day-cell-quarta-1600,
+.day-cell-quinta-1600, .day-cell-sexta-1600,
+.day-cell-segunda-1700, .day-cell-terca-1700, .day-cell-quarta-1700,
+.day-cell-quinta-1700, .day-cell-sexta-1700 {
+    /* ... */
+}
+
+/* Row-specific styling */
+.schedule-row-0700, .schedule-row-0800, .schedule-row-0900, .schedule-row-1000,
+.schedule-row-1100, .schedule-row-1300, .schedule-row-1400, .schedule-row-1500,
+.schedule-row-1600, .schedule-row-1700 {
+    /* ... */
+}
