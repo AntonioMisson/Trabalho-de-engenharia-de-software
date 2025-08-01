@@ -22,5 +22,11 @@
     "senha": "1234",
     "usuario": "eu",
     "tipo": "aluno"
+  },
+  {
+    "email": "davimbechior@gmail.com",
+    "senha": "dmb192004",
+    "usuario": "Davi",
+    "tipo": "aluno"
   }
 ]

@@ -422,3 +422,49 @@ p a:hover {
   margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
+.chat-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.chat-header {
+  display: flex; align-items: center; margin-bottom: 1rem;
+}
+.chat-header .btn-back {
+  padding: .4rem .8rem; background: #ccc; border-radius: 6px;
+  text-decoration: none; color: #333; margin-right: 1rem;
+}
+.message-list {
+  max-height: 400px; overflow-y: auto; margin-bottom: 1rem;
+}
+.message { margin-bottom: .8rem; display: flex; flex-direction: column; }
+.message.incoming .body { background: #f1f1f1; }
+.message.outgoing .body { background: #d1f7c4; align-self: flex-end; }
+.message .meta { font-size: .75rem; color: #666; }
+.message .body {
+  padding: .6rem; border-radius: 6px; max-width: 70%;
+}
+.attachment img {
+  max-width: 200px; border-radius: 4px; margin-top: .5rem;
+}
+.chat-input textarea {
+  width: 100%; border-radius: 8px; border: 1px solid #ccc;
+  padding: .6rem; resize: vertical;
+}
+.controls {
+  display: flex; align-items: center; margin-top: .5rem;
+}
+.attach {
+  display: inline-flex; align-items: center; cursor: pointer;
+  margin-right: 1rem; font-size: .9rem; color: #333;
+}
+.attach .icon-folder::before { content: "📁"; margin-right: .3rem; }
+.attach .icon-camera::before { content: "📷"; margin-right: .3rem; }
+.btn-send {
+  margin-left: auto; padding: .5rem 1rem; background: #4CAF50;
+  color: white; border: none; border-radius: 6px; cursor: pointer;
+}
+.btn-send:hover { background: #45a049; }

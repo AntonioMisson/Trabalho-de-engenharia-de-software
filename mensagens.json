@@ -1,0 +1,16 @@
+[
+  {
+    "from": "davimbechior@gmail.com",
+    "to": "maria@exemplo.com",
+    "when": "2025-08-01T20:16:11.258635",
+    "text": "Teste",
+    "anexo": null
+  },
+  {
+    "from": "davimbechior@gmail.com",
+    "to": "maria@exemplo.com",
+    "when": "2025-08-01T20:16:17.353892",
+    "text": "Davi",
+    "anexo": null
+  }
+]

@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, make_respo
 import os
 import json
 from flask import Response
+import datetime
 
 
 app = Flask(
@@ -272,7 +273,95 @@ def feedback():
 
         return redirect(url_for("main"))
 
-    return render_template("feedback.html")
+    return render_template("feedback.html") 
+# ─── Helpers para ler e gravar JSON ────────────────────────────────────
+def carregar_json(path):
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+def salvar_json(path, obj):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+
+# Variáveis de rota de mensagens
+MESSAGES_PATH   = "mensagens.json"
+UPLOADS_FOLDER  = "uploads"
+import datetime
+os.makedirs(UPLOADS_FOLDER, exist_ok=True)
+
+
+# ─── Nova rota de Mensagens ───────────────────────────────────────────
+@app.route("/mensagens")
+def lista_conversas():
+    usuario = request.cookies.get("remembered_user")
+    if not usuario:
+        return redirect(url_for("login"))
+
+    usuarios = carregar_json(USUARIOS_PATH)
+    perfis   = carregar_perfis()
+
+    # se for aluno, mostrar monitores; se for monitor, mostrar alunos
+    tipo = next((u["tipo"] for u in usuarios if u["email"]==usuario), None)
+    if tipo=="aluno":
+        alvos = [u for u in usuarios if u["tipo"]=="monitor"]
+    else:
+        alvos = [u for u in usuarios if u["tipo"]=="aluno"]
+
+    threads = [{
+        "email": u["email"],
+        "nome": perfis.get(u["email"],{}).get("nome",u["email"])
+    } for u in alvos]
+
+    return render_template("lista_conversas.html", threads=threads)
+
+
+# ─── 2) Chat com um contato específico ──────────────────────────────
+@app.route("/mensagens/<contato_email>", methods=["GET","POST"])
+def mensagens(contato_email):
+    usuario = request.cookies.get("remembered_user")
+    if not usuario:
+        return redirect(url_for("login"))
+
+    todas = carregar_json(MESSAGES_PATH)
+    conversa = [
+      m for m in todas
+      if {m["from"],m["to"]} == {usuario, contato_email}
+    ]
+
+    if request.method=="POST":
+        texto   = request.form.get("comentario","").strip()
+        arquivo = request.files.get("arquivo")
+        foto    = request.files.get("foto")
+
+        anexo = None
+        for up in (arquivo,foto):
+            if up and up.filename:
+                fn  = f"{int(datetime.datetime.now().timestamp())}_{up.filename}"
+                dst = os.path.join(UPLOADS_FOLDER, fn)
+                up.save(dst)
+                anexo = url_for("static", filename=f"../{dst}")
+                break
+
+        nova = {
+            "from": usuario,
+            "to":   contato_email,
+            "when": datetime.datetime.now().isoformat(),
+            "text": texto,
+            "anexo": anexo
+        }
+        todas.append(nova)
+        salvar_json(MESSAGES_PATH, todas)
+        return redirect(url_for("mensagens", contato_email=contato_email))
+
+    perfis   = carregar_perfis()
+    nome_out = perfis.get(contato_email,{}).get("nome", contato_email)
+    return render_template("mensagens.html",
+                           conversa=conversa,
+                           aluno=usuario,
+                           monitor=contato_email,
+                           nome_mon=nome_out)
 
 AGENDAMENTOS_PATH = "agendamentos.json"
 
