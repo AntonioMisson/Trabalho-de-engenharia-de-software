@@ -468,3 +468,25 @@ p a:hover {
   color: white; border: none; border-radius: 6px; cursor: pointer;
 }
 .btn-send:hover { background: #45a049; }
+
+.bubble {
+  background-color: #ffffff; /* cor de fundo da caixa */
+  color: #000000;             /* cor do texto */
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: inline-block;
+  max-width: 75%;
+  margin: 6px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+.message.outgoing .bubble {
+  background-color: #d4eaff; /* mensagens do aluno (azul claro) */
+  align-self: flex-end;
+}
+
+.message.incoming .bubble {
+  background-color: #f1f1f1; /* mensagens do monitor (cinza claro) */
+  align-self: flex-start;
+}

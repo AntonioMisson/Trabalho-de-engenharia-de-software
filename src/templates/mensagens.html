@@ -10,23 +10,27 @@
   <section class="message-list">
     {% for msg in conversa %}
       <div class="message {% if msg.from == aluno %}outgoing{% else %}incoming{% endif %}">
-        <div class="meta">
-          <span class="sender">{{ "Você" if msg.from==aluno else nome_mon }}</span>
-          <time>{{ msg.when[:19].replace('T',' ') }}</time>
-        </div>
-        <div class="body">
-          {% if msg.text %}<p>{{ msg.text }}</p>{% endif %}
-          {% if msg.anexo %}
-            <div class="attachment">
-              {% if msg.anexo.endswith(('.png','.jpg','.jpeg','.gif')) %}
-                <img src="{{ msg.anexo }}" alt="foto anexa">
-              {% else %}
-                <a href="{{ msg.anexo }}" download>📎 Baixar arquivo</a>
-              {% endif %}
-            </div>
-          {% endif %}
-        </div>
+  <div class="meta">
+    <span class="sender">{{ "Você" if msg.from==aluno else nome_mon }}</span>
+    <time>{{ msg.when[:19].replace('T',' ') }}</time>
+  </div>
+  <div class="body">
+    {% if msg.text %}
+      <div class="bubble">
+        <p>{{ msg.text }}</p>
       </div>
+    {% endif %}
+    {% if msg.anexo %}
+      <div class="attachment">
+        {% if msg.anexo.endswith(('.png','.jpg','.jpeg','.gif')) %}
+          <img src="{{ msg.anexo }}" alt="foto anexa">
+        {% else %}
+          <a href="{{ msg.anexo }}" download>📎 Baixar arquivo</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
     {% endfor %}
   </section>
 

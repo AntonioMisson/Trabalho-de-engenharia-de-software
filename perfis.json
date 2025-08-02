@@ -22,5 +22,10 @@
     "telefone": "1234",
     "curso": "Física",
     "email": "eu@gmail.com"
+  },
+  "teste@exemplo.com": {
+    "nome": "Aluno Teste",
+    "curso": "Engenharia",
+    "telefone": "123456789"
   }
 }
