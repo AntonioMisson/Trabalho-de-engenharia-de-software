@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Saiba Mais</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sobre o Projeto</h1>
+        </header>
+
+        <section>
+            <p>
+                Este sistema foi desenvolvido como parte do trabalho da disciplina de Engenharia de Software.
+                O objetivo é demonstrar o desenvolvimento de um sistema web completo com funcionalidades essenciais,
+                organização de código, testes automatizados e persistência de dados.
+            </p>
+        </section>
+
+        <section>
+            <h2>Funcionalidades</h2>
+            <ul>
+                <li>Cadastro e gerenciamento de usuários</li>
+                <li>Persistência de dados em arquivos JSON</li>
+                <li>Testes automatizados para garantir a qualidade</li>
+            </ul>
+        </section>
+
+      <section>
+    <h2>Equipe</h2>
+    <p><strong>
+        Antonio Misson Junqueira<br>
+        Artur Fernandes Braga<br>
+        Davi de Menezes Belchior<br>
+        Fabrício Alves Ribeiro<br>
+        Victor de Sousa Ribeiro
+    </strong></p>
+</section>
+        <footer>
+            <a href="{{ url_for('home') }}" class="btn">← Voltar para a página principal</a>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="chat-container">
+
+  <header class="chat-header">
+    <a href="{{ url_for('main') }}" class="btn-back">&larr; Voltar</a>
+    <h2>Conversando com {{ nome_mon }}</h2>
+  </header>
+
+  <section class="message-list">
+    {% for msg in conversa %}
+      <div class="message {% if msg.from == aluno %}outgoing{% else %}incoming{% endif %}">
+  <div class="meta">
+    <span class="sender">{{ "Você" if msg.from==aluno else nome_mon }}</span>
+    <time>{{ msg.when[:19].replace('T',' ') }}</time>
+  </div>
+  <div class="body">
+    {% if msg.text %}
+      <div class="bubble">
+        <p>{{ msg.text }}</p>
+      </div>
+    {% endif %}
+    {% if msg.anexo %}
+      <div class="attachment">
+        {% if msg.anexo.endswith(('.png','.jpg','.jpeg','.gif')) %}
+          <img src="{{ msg.anexo }}" alt="foto anexa">
+        {% else %}
+          <a href="{{ msg.anexo }}" download>📎 Baixar arquivo</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+    {% endfor %}
+  </section>
+
+  <form class="chat-input" method="POST" enctype="multipart/form-data">
+    <textarea name="comentario" placeholder="Digite seu comentário..." rows="3"></textarea>
+    <div class="controls">
+      <label class="attach">
+        <input type="file" name="arquivo" hidden>
+        <i class="icon-folder"></i> Anexar Arquivo
+      </label>
+      <label class="attach">
+        <input type="file" name="foto" accept="image/*" hidden>
+        <i class="icon-camera"></i> Anexar Foto
+      </label>
+      <button type="submit" class="btn-send">Enviar</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
