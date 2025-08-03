@@ -404,6 +404,10 @@ def horario():
                            agendados=agendados,
                            usuario=usuario)
 
+@app.route("/saiba_mais")
+def saiba_mais():
+    return render_template("saiba_mais.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

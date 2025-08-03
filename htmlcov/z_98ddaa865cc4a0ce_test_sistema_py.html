@@ -54,8 +54,8 @@
             </div>
         </aside>
         <h2>
-            <span class="text">81 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">78<span class="text"> run</span></button>
+            <span class="text">85 statements &nbsp;</span>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">82<span class="text"> run</span></button>
             <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">3<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.10.1">coverage.py v7.10.1</a>,
-            created at 2025-08-01 22:05 -0300
+            created at 2025-08-03 20:40 -0300
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -212,6 +212,11 @@
     <p class="run"><span class="n"><a id="t130" href="#t130">130</a></span><span class="t"><span class="key">def</span> <span class="nam">test_monitores</span><span class="op">(</span><span class="nam">client</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t131" href="#t131">131</a></span><span class="t">    <span class="nam">response</span> <span class="op">=</span> <span class="nam">client</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">'/monitores'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t132" href="#t132">132</a></span><span class="t">    <span class="key">assert</span> <span class="nam">response</span><span class="op">.</span><span class="nam">status_code</span> <span class="op">==</span> <span class="num">200</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t133" href="#t133">133</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t134" href="#t134">134</a></span><span class="t"><span class="key">def</span> <span class="nam">test_saiba_mais</span><span class="op">(</span><span class="nam">client</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t135" href="#t135">135</a></span><span class="t">    <span class="nam">response</span> <span class="op">=</span> <span class="nam">client</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">'/saiba_mais'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t136" href="#t136">136</a></span><span class="t">    <span class="key">assert</span> <span class="nam">response</span><span class="op">.</span><span class="nam">status_code</span> <span class="op">==</span> <span class="num">200</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t137" href="#t137">137</a></span><span class="t">    <span class="key">assert</span> <span class="str">b'Sobre o Projeto'</span> <span class="key">in</span> <span class="nam">response</span><span class="op">.</span><span class="nam">data</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -221,7 +226,7 @@
             <a class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.10.1">coverage.py v7.10.1</a>,
-            created at 2025-08-01 22:05 -0300
+            created at 2025-08-03 20:40 -0300
         </p>
     </div>
 </footer>

@@ -130,3 +130,8 @@ def test_faqs(client):
 def test_monitores(client):
     response = client.get('/monitores')
     assert response.status_code == 200
+
+def test_saiba_mais(client):
+    response = client.get('/saiba_mais')
+    assert response.status_code == 200
+    assert b'Sobre o Projeto' in response.data
