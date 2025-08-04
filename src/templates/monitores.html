@@ -12,14 +12,15 @@
             {% for monitor in monitores %}
             <div class="monitor-card">
                 <h3>{{ monitor.nome }}</h3>
+                <p><strong>Nome:</strong> {{ monitor.nome }}</p>
                 <p><strong>Disciplina:</strong> {{ monitor.disciplina }}</p>
                 <p><strong>Curso:</strong> {{ monitor.curso }}</p>
                 <p><strong>Disponibilidade:</strong> {{ monitor.disponibilidade }}</p>
-                <p><strong>Contato:</strong> <a href="mailto:{{ monitor.email }}" class="contact-email">{{ monitor.email }}</a></p>
-                <div class="actions">
-                    <a href="#" class="btn btn-schedule">Ver Agenda Completa</a>
-                    <a href="#" class="btn btn-message">Enviar Mensagem</a>
-                </div>
+                <p><strong>Contato:</strong>
+                    <a href="mailto:{{ monitor.email }}" class="contact-email">
+                        {{ monitor.email }}
+                    </a>
+                </p>
             </div>
             {% endfor %}
         </div>

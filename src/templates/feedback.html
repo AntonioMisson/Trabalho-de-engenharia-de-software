@@ -10,10 +10,10 @@
 <form method="POST" action="{{ url_for('feedback') }}">
   <h3>Qual seu nível de satisfação?</h3>
   <div class="stars">
-    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★★★★★</label>
-    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★★★★</label>
-    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★★★</label>
-    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★★</label>
+    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
     <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
   </div>
 
@@ -24,8 +24,9 @@
   <input type="text" name="comentario" placeholder="Comente aqui..." />
 
   <div class="buttons">
-    <a href="{{ url_for('main') }}"><button type="button">Voltar</button></a>
-    <button type="submit">Enviar</button>
+    <a href="{{ url_for('main') }}" class="btn" style="text-align: center;">Voltar</a>
+<button type="submit" class="btn">Enviar</button>
+
   </div>
 </form>
 
